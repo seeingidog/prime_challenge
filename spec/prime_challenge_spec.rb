@@ -2,12 +2,18 @@ require 'rspec'
 require_relative '../app.rb'
 
 RSpec.describe PrimeMultiplicationTable do
+  
   before do
     @object = PrimeMultiplicationTable.new
   end
   
   it "creates an object with 10 primes" do
     expect(@object.primes.count).to eq(10)
+  end
+
+  it "generates 30 primes" do
+    @object.generate_primes(30)
+    expect(@object.primes.count).to eq(30)
   end
   
   it "checks numbers for primality" do
